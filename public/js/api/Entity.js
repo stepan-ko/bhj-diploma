@@ -9,7 +9,8 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback){
-
+    data.method = 'GET';
+    createRequest({data, callback});
   }
 
   /**
@@ -18,7 +19,8 @@ class Entity {
    * что наследуется от Entity)
    * */
   static create(data, callback) {
-
+    data.method = 'PUT';
+    createRequest({data, callback});
   }
 
   /**
@@ -26,6 +28,9 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(data, callback ) {
-
+    data.method = 'DELETE';
+    createRequest({data, callback});
   }
+
+  static URL = '';
 }
